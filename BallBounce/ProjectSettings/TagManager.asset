@@ -7,7 +7,7 @@ TagManager:
   - CheckFall
   - CheckCollide
   - Paddle
-  - Coins
+  - Gem
   layers:
   - Default
   - TransparentFX

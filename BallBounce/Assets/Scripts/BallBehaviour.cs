@@ -8,9 +8,14 @@ public class BallBehaviour : MonoBehaviour
     Rigidbody2D rb;
     public float bounceForce;
 
-    public float maxSpeed = 350f;
+    public float startingSpeed = 350f;
+
+    [SerializeField]
+    private float maxVelocity = 9f;
 
     bool GameStarted;
+
+    public Animator animator;
 
     public void Awake() {
 
@@ -35,24 +40,25 @@ public class BallBehaviour : MonoBehaviour
                 GameManager.instance.GameStart();
             }
         }
+
+        var vel = rb.velocity;
+        var speed = vel.magnitude;
+
+        rb.velocity = Vector2.ClampMagnitude(vel, maxVelocity);
+        Debug.Log(speed);
+
     }
 
     void StartInitalBounce() {
 
-        //Vector2 randomDirection = new Vector2(Random.Range(-1,  1),   1);
-        //rb.AddForce(randomDirection * 10, ForceMode2D.Impulse);
+        animator.SetTrigger("GameStart");
 
         rb = GetComponent<Rigidbody2D> ();
-        rb.AddForce(Vector2.up * maxSpeed);
+        rb.AddForce(Vector2.up * startingSpeed);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-
-
-        if (collision.gameObject.CompareTag("Coins")) {
-            
-            Destroy(collision.gameObject);
-        }
 
         if(collision.gameObject.tag == "CheckFall") {
             
@@ -70,5 +76,14 @@ public class BallBehaviour : MonoBehaviour
             rb.AddForce(Vector2.down * 20);
         }
 
+    }
+
+    private void OnTriggerEnter2D (Collider2D collision) {
+
+        if(collision.gameObject.CompareTag("Gem")) {
+
+            Destroy(collision.gameObject);
+
+        }
     }
 }

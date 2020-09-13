@@ -27,7 +27,7 @@ public class PaddleController : MonoBehaviour
         }
 
         transform.Translate(new Vector2(input * speed * Time.deltaTime, 0));
-        float currentX = Mathf.Clamp(transform.position.x, LeftBlockTransform.position.x + 1, RightBlockTransform.position.x -1);
+        float currentX = Mathf.Clamp(transform.position.x, LeftBlockTransform.position.x + 1.2f, RightBlockTransform.position.x -1.2f);
         transform.position = new Vector3(currentX, transform.position.y, transform.position.z);
 
         
