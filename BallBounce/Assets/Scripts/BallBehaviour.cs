@@ -48,6 +48,12 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
+
+        if (collision.gameObject.CompareTag("Coins")) {
+            
+            Destroy(collision.gameObject);
+        }
+
         if(collision.gameObject.tag == "CheckFall") {
             
             GameManager.instance.Restart();
@@ -63,5 +69,6 @@ public class BallBehaviour : MonoBehaviour
         else if (collision.gameObject.tag == "CheckCollide") {
             rb.AddForce(Vector2.down * 20);
         }
+
     }
 }
