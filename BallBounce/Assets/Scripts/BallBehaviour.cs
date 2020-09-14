@@ -15,6 +15,9 @@ public class BallBehaviour : MonoBehaviour
 
     bool GameStarted;
 
+    [SerializeField]
+    private GameObject gem;
+
     public Animator animator;
 
     public void Awake() {
@@ -42,10 +45,9 @@ public class BallBehaviour : MonoBehaviour
         }
 
         var vel = rb.velocity;
-        var speed = vel.magnitude;
+        //var speed = vel.magnitude;
 
         rb.velocity = Vector2.ClampMagnitude(vel, maxVelocity);
-        Debug.Log(speed);
 
     }
 
@@ -57,6 +59,27 @@ public class BallBehaviour : MonoBehaviour
         rb.AddForce(Vector2.up * startingSpeed);
 
     }
+
+
+    private void SpawnGem() {
+
+        bool gemSpawn = false;
+        while(!gemSpawn) {
+
+            Vector3 gemPosition = new Vector3(Random.Range(-8f, 8f), Random.Range(-3f, 4f), 0f);
+            if((gemPosition - transform.position).magnitude < 3) {
+
+                continue;
+
+            }
+            else {
+
+                Instantiate(gem, gemPosition, Quaternion.identity);
+                gemSpawn = true;
+            }
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
@@ -77,13 +100,12 @@ public class BallBehaviour : MonoBehaviour
         }
 
     }
-
     private void OnTriggerEnter2D (Collider2D collision) {
 
         if(collision.gameObject.CompareTag("Gem")) {
 
             Destroy(collision.gameObject);
-
+            SpawnGem();
         }
     }
 }

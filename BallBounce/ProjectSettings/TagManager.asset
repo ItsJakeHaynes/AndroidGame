@@ -8,6 +8,7 @@ TagManager:
   - CheckCollide
   - Paddle
   - Gem
+  - PlayerBall
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BallBehaviour
     - GameManager
+    - Gem
     - PaddleController
+    - ScoreManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -14,14 +16,17 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -47,6 +52,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
@@ -68,23 +75,37 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11850}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12132}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 12892}
+      Script: {instanceID: 12920}
     - Class: 114
-      Script: {instanceID: 13454}
+      Script: {instanceID: 12978}
     - Class: 114
-      Script: {instanceID: 14486}
+      Script: {instanceID: 13352}
     - Class: 114
-      Script: {instanceID: 15120}
+      Script: {instanceID: 13484}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 14072}
+    - Class: 114
+      Script: {instanceID: 14092}
+    - Class: 114
+      Script: {instanceID: 14412}
+    - Class: 114
+      Script: {instanceID: 14516}
+    - Class: 114
+      Script: {instanceID: 14806}
+    - Class: 114
+      Script: {instanceID: 14882}
+    - Class: 114
+      Script: {instanceID: 15152}
+    - Class: 114
+      Script: {instanceID: 15202}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -352,6 +373,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: ee98729079998eb63435f99f41b30b9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -502,6 +529,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 2b9ec4cb2da1b6c3510da62e747b5ccb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gem
+  - hash:
+      serializedVersion: 2
       Hash: a2612813f45d0ced02c3e4bc9dbea8b4
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -586,7 +619,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 14a31f7d52ce3c9057f9d6a47ef142d4
+      Hash: 8a68be7d4f5ae96811d265b897926e88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallBehaviour
@@ -605,4 +638,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/Development/AndroidApplication/AndroidGame/BallBounce/Builds/Build_v.1.6.apk
+  playerPath: D:/Development/AndroidApplication/AndroidGame/BallBounce/Builds/Build_v.1.7.apk
