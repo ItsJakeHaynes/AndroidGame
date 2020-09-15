@@ -22,11 +22,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -67,6 +62,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -139,7 +138,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: ae0ef9fc8acef81eeb987b7a2b9ec3f9
+      Hash: c040f1e92d4856d3638cf3cbf3abcd6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PaddleController
@@ -619,7 +618,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 8a68be7d4f5ae96811d265b897926e88
+      Hash: c6aff29ceb911272fa13d39b124ee7a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallBehaviour
@@ -638,4 +637,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/Development/AndroidApplication/AndroidGame/BallBounce/Builds/Build_v.1.7.apk
+  playerPath: D:/Development/AndroidApplication/AndroidGame/BallBounce/Builds/Build_v.1.8
+    Final.apk

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-
-    Rigidbody2D rigidB;
-    public float moveSpeed;
-    public float rightScreenEdge;
-    public float leftScreenEdge;
+    public float speed = 70;
+    public Transform LeftBlockTransform, RightBlockTransform;
 
     // Update is called once per frame
     void Update()
@@ -27,12 +24,8 @@ public class PaddleController : MonoBehaviour
         }
 
         transform.Translate(new Vector2(input * speed * Time.deltaTime, 0));
-        float currentX = Mathf.Clamp(transform.position.x, LeftBlockTransform.position.x + 1.2f, RightBlockTransform.position.x -1.2f);
+        float currentX = Mathf.Clamp(transform.position.x, LeftBlockTransform.position.x + 1.5f, RightBlockTransform.position.x -1.5f);
         transform.position = new Vector3(currentX, transform.position.y, transform.position.z);
-
         
     }
-
-    public Transform LeftBlockTransform, RightBlockTransform;
-    public float speed = 50;
 }

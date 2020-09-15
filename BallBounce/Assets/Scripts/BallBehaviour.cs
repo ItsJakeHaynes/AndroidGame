@@ -20,15 +20,19 @@ public class BallBehaviour : MonoBehaviour
 
     public Animator animator;
 
-    public void Awake() {
+    public AudioClip bounce;
+    public AudioClip gemPickUp;
 
+    public AudioClip Fall;
+
+    public void Awake() {
        rb = GetComponent<Rigidbody2D>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        GetComponent<AudioSource> ().playOnAwake = false;
     }
 
     // Update is called once per frame
@@ -55,7 +59,7 @@ public class BallBehaviour : MonoBehaviour
 
         animator.SetTrigger("GameStart");
 
-        rb = GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D>();
         rb.AddForce(Vector2.up * startingSpeed);
 
     }
@@ -83,13 +87,9 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
-        if(collision.gameObject.tag == "CheckFall") {
-            
-            GameManager.instance.Restart();
+        GetComponent<AudioSource>().PlayOneShot(bounce, 1);
 
-        }
-
-        else if (collision.gameObject.tag =="Paddle") {
+        if (collision.gameObject.tag =="Paddle") {
 
             GameManager.instance.UpdateScore();
             rb.AddForce(Vector2.left * 22);
@@ -104,8 +104,17 @@ public class BallBehaviour : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Gem")) {
 
+            GetComponent<AudioSource>().PlayOneShot(gemPickUp, 1);
+
             Destroy(collision.gameObject);
             SpawnGem();
+        }
+
+        else if(collision.gameObject.tag == "CheckFall") {
+
+            GetComponent<AudioSource>().PlayOneShot(Fall, 1);        
+            GameManager.instance.Restart();
+
         }
     }
 }
